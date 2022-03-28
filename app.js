@@ -41,9 +41,9 @@ process.on("unhandledRejection", (err) => console.log('rejection',err));
     app.use(express.urlencoded())
     app.use(express.json())
 
-    app.use(express.static(path.normalize(__dirname + '/public')))
+    app.use(express.static(path.normalize(__dirname + '/build')))
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, "public", "index.html"));
+        res.sendFile(path.join(__dirname, "build", "index.html"));
     })
 
     let time = +new Date()
